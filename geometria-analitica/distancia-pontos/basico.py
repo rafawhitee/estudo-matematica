@@ -1,3 +1,4 @@
+import matplotlib.pyplot as plt
 import sympy as sp
 
 # Definindo as variáveis da fórmula
@@ -26,19 +27,27 @@ print(f"Distância BD: {distancia.subs({x1: B[0], y1: B[1], x2: D[0], y2: D[1]})
 
 print(f"Distância CD: {distancia.subs({x1: C[0], y1: C[1], x2: D[0], y2: D[1]}).evalf()}\n")
 
-# Exemplo EEAR:
-# O triângulo de vértices A(7,3), B(-4,3) e C(-4,-2) e:
-#   a) Escaleno
-#   b) Isósceles
-#   c) Equiângulo
-#   d) Obstusângulo
+# Criar a figura e os eixos
+fig, ax = plt.subplots()
 
-T1 = (7,3)
-T2 = (-4,3)
-T3 = (-4,-2)
+ax.scatter(A[0], A[1], color='red', s=100) 
+ax.scatter(B[0], B[1], color='green', s=100) 
+ax.scatter(C[0], C[1], color='blue', s=100) 
+ax.scatter(D[0], D[1], color='yellow', s=100) 
 
-print(f"Distância T1 para T2: {distancia.subs({x1: T1[0], y1: T1[1], x2: T2[0], y2: T2[1]}).evalf()}")
-print(f"Distância T1 para T3: {distancia.subs({x1: T1[0], y1: T1[1], x2: T3[0], y2: T3[1]}).evalf()}")
-print(f"Distância T2 para T3: {distancia.subs({x1: T2[0], y1: T2[1], x2: T3[0], y2: T3[1]}).evalf()}")
+# Configurar o plano cartesiano
+ax.axhline(y=0, color='k')  # Eixo x
+ax.axvline(x=0, color='k')  # Eixo y
+ax.grid(True, which='both')
 
-# os lados são diferentes, logo é a Letra A (Escaleno)
+# Adicionar título e legendas
+plt.title('Distância entre os Pontos')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.grid(True)
+
+# Definir os limites dos eixos
+ax.set_xlim([-10, 25])
+ax.set_ylim([-10, 25])
+
+plt.show()
