@@ -1,1 +1,1 @@
-# estudo-calculo
+# Cálculo 1 (Limite, Derivada e Integral)
