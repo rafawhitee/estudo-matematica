@@ -31,8 +31,8 @@ fig, ax = plt.subplots()
 
 ax.plot(x_vals, expression_func(x_vals), label="Expressão Original")
 ax.plot(x_vals, derivative_func(x_vals), label="Derivada da Original")
-#ax.plot(x_vals, integrate_expression_func(x_vals), label="Integral da Original")
-#ax.plot(x_vals, integrate_derivative_func(x_vals), label="Integral da Derivada")
+ax.plot(x_vals, integrate_expression_func(x_vals), label="Integral da Original")
+ax.plot(x_vals, integrate_derivative_func(x_vals), label="Integral da Derivada")
 
 # Configurar o plano cartesiano
 ax.axhline(y=0, color='k')  # Eixo x
