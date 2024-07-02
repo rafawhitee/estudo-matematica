@@ -47,8 +47,8 @@ plt.legend()
 plt.grid(True)
 
 # Definir os limites dos eixos
-ax.set_xlim([-10, 40])
-ax.set_ylim([-10, 40])
+ax.set_xlim([-2, 4])
+ax.set_ylim([-10, 10])
 
 # Mostrar o gráfico
 plt.show()
