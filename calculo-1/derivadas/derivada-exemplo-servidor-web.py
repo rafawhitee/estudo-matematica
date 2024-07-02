@@ -51,7 +51,7 @@ plt.grid(True)
 
 # Definir os limites dos eixos
 ax.set_xlim([1, 20])
-ax.set_ylim([0, max(T_vals) + 20])
+ax.set_ylim([-10, max(T_vals) + 50])
 
 # Mostrar o gráfico
 plt.show()
