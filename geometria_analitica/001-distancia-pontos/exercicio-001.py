@@ -1,12 +1,5 @@
 import matplotlib.pyplot as plt
-import sympy as sp
-
-# Definindo as variáveis da fórmula
-x1, y1 = sp.symbols('x1 y1')
-x2, y2 = sp.symbols('x2 y2')
-
-# Fórmula da distância euclidiana
-distancia = sp.sqrt((x2 - x1)**2 + (y2 - y1)**2)
+from geometria_analitica.utils import distancia_euclidiana
 
 # Exemplo EEAR:
 # O triângulo de vértices A(7,3), B(-4,3) e C(-4,-2) e:
@@ -19,9 +12,13 @@ T1 = (7,3)
 T2 = (-4,3)
 T3 = (-4,-2)
 
-print(f"Distância T1 para T2: {distancia.subs({x1: T1[0], y1: T1[1], x2: T2[0], y2: T2[1]}).evalf()}")
-print(f"Distância T1 para T3: {distancia.subs({x1: T1[0], y1: T1[1], x2: T3[0], y2: T3[1]}).evalf()}")
-print(f"Distância T2 para T3: {distancia.subs({x1: T2[0], y1: T2[1], x2: T3[0], y2: T3[1]}).evalf()}")
+distancia_t1_t2 = distancia_euclidiana(T1, T2)
+distancia_t1_t3 = distancia_euclidiana(T2, T3)
+distancia_t2_t3 = distancia_euclidiana(T2, T3)
+
+print(f"Distância T1 para T2: {distancia_t1_t2}")
+print(f"Distância T1 para T3: {distancia_t1_t3}")
+print(f"Distância T2 para T3: {distancia_t2_t3}")
 
 # os lados são diferentes, logo é a Letra A (Escaleno)
 
