@@ -51,5 +51,25 @@ Tangente = Cateto Oposto / Cateto Adjacente
 ## Aula 006
 A Equação Geral de uma reta é a Equação Fundamental só que simplificada.
 
-Equação Fundamental --> y - ya = m (x - xa)
-Equação Geral --> ax + by + c = 0
+### Equação Fundamental
+y - ya = m (x - xa)
+
+### Equação Geral
+ax + by + c = 0
+
+
+## Observações:
+
+### Paralelismo
+As retas serão paralelas se possuírem a mesma declividade (mesmo coeficiente angular) e se elas tiverem o mesmo coeficiente linear, é a mesma reta.
+Exemplo: 2x + 5 e 2x + 8 são parelelas, mas são retas diferentes (por causa do coeficiente linear)
+Exemplo 2: 4x + 5 e 4x + 5 são parelelas, e é a mesma reta (por causa do coeficiente linear)
+
+### Perpendicularismo
+As retas serão perpendiculares se o coeficiente angular foi o oposto da outra com sinal trocado.
+
+Exemplo: 2x + 5 e -1/2x + 8 são perpendiculares, pois o coeficiente angular da primeira é 2 e da segunda reta é -1/2
+
+Exemplo 2: -5x + 12 e 1/5x - 3 são perpendiculares, pois o coeficiente angular da primeira é -5 e o da segunda reta é 1/5
+
+Fórmulas: m1 = -1/m2 ou m1 * m2 = -1
