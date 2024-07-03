@@ -47,7 +47,7 @@ ax.annotate(f'C', xy=(C[0], C[1]), xytext=(C[0] - 20, C[1]), textcoords='offset 
 ax.scatter(D[0], D[1], color='yellow', s=100) 
 ax.annotate(f'D', xy=(D[0], D[1]), xytext=(D[0] - 20, D[1]), textcoords='offset points', arrowprops=dict(facecolor='yellow', arrowstyle='->'), ha='center')
 
-# Coloca as distâncias entre os pontos (A e B)
+# Coloca as distâncias entre os pontos
 
 # Entre A e B
 x_vals_ab = np.linspace(min(A[0], B[0]), max(A[0], B[0]), 400)
