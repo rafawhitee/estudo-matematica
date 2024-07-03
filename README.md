@@ -1,11 +1,12 @@
 # Estudo Matemática
 
-## Moduralização
+## 🚀 Começando
 
-Altere as variáveis de ambiente para colocar os módulos no path do Python:
+Criei esse projeto para estudo, mas também em cada pasta relacionado ao assunto, existe um utils.py, com funções para utilizar em outros arquivos python.
+Para o Python conseguir enxergar esses arquivos, deve registrar eles no path do python no seu sistema operacional.
 
-set PYTHONPATH=%PYTHONPATH%;C:\path\to\project_root\algebra_linear
-set PYTHONPATH=%PYTHONPATH%;C:\path\to\project_root\calculo_1
-set PYTHONPATH=%PYTHONPATH%;C:\path\to\project_root\estatistica
+### Windows
+```
 set PYTHONPATH=%PYTHONPATH%;C:\path\to\project_root\funcoes
 set PYTHONPATH=%PYTHONPATH%;C:\path\to\project_root\geometria_analitica
+```
