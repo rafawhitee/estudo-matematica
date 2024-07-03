@@ -15,6 +15,16 @@ def ponto_medio(A, B):
 def baricentro(A, B, C):
     return ((A[0] + B[0] + C[0]) / 3, (A[1] + B[1] + C[1]) / 3)
 
+# retorna a função python da Equação Geral da reta que passa pelos pontos A, B 
+def equacao_geral_lambdify(A, B):
+    return sp.lambdify(sp.symbols('x y'), equacao_geral(A, B), 'numpy')
+
+# retorna a expressão da Equação Geral da reta que passa pelos pontos A, B 
+def equacao_geral(A, B):
+    x, y = sp.symbols('x y')
+    coef_angular = coeficiente_angular(A, B)
+    return y - A[1] - (coef_angular * (x - A[0]))
+
 # retorna a função python da Equação Reduzida Invertida da reta que passa pelos pontos A, B 
 # Ex: imagina a expressão 'y = 2x - 3', a sua invertida é 'x = (y - 3) / 2'
 def equacao_reduzida_invertida_lambdify(A, B):

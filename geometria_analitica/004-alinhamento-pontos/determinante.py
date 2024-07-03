@@ -15,4 +15,4 @@ M = np.array([
 # calcula o determinante da matriz
 det = np.linalg.det(M)
 print(f"Determinante: {det}")
-print(f"Colinear (estão alinhados): {det == 0}")
+print(f"São Colineares (alinhados): {det == 0}")

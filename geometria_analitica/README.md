@@ -49,3 +49,7 @@ E o coeficiente angular (declividade da reta) é igual a tangente do ângulo.
 Tangente = Cateto Oposto / Cateto Adjacente
 
 ## Aula 006
+A Equação Geral de uma reta é a Equação Fundamental só que simplificada.
+
+Equação Fundamental --> y - ya = m (x - xa)
+Equação Geral --> ax + by + c = 0
