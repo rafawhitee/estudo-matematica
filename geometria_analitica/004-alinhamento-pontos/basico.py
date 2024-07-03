@@ -1,18 +1,12 @@
 import numpy as np
+from utils import *
 
 # Cria os 3 pontos
 A = (2, 5)
 B = (3, 9)
 C = (4, 11)
 
-# Criar a matriz 3x3
-M = np.array([
-    [A[0], A[1], 1],
-    [B[0], B[1], 1],
-    [C[0], C[1], 1]
-])
+coef_angular_ab = coeficiente_angular(A, B)
+coef_angular_ac = coeficiente_angular(A, C)
 
-# calcula o determinante da matriz
-det = np.linalg.det(M)
-print(f"Determinante: {det}")
-print(f"Colinear (estão alinhados): {det == 0}")
+print(f"Colinear (estão alinhados): {coef_angular_ab == coef_angular_ac}")

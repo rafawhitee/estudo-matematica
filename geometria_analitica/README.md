@@ -30,7 +30,14 @@ E dividindo todos os lados com mediana, o encontro no centro desse triângulo é
 ## Aula 004
 Alinhamento de 3 Pontos.
 
+Basta ver a inclinação da reta (coeficiente angular) se são iguais
+Se você tem 3 pontos (A, B, C) os 3 coeficiente angulares de AB deve ser igual ao coeficiente angular de BC
+
 Para saber se 3 pontos estão alinhados (numa mesma reta), basta colocar ela numa matriz, completar a última coluna com 1 e calcular o determinante desta matriz, sendo = 0, estão alinhados.
+
+Outro jeito de ver se os pontos estão alinhados, é com matriz
+Basta colocar ela numa matriz, completar a última coluna com 1 e calcular o determinante desta matriz
+Se o determinado for igual a 0, estão alinhados.
 
 ## Aula 005
 Equação Reduzida de uma Reta (Função do Primeiro Grau)
