@@ -12,6 +12,10 @@ def ponto_medio(A, B):
 def baricentro(A, B, C):
     return ((A[0] + B[0] + C[0]) / 3, (A[1] + B[1] + C[1]) / 3)
 
+def equacao_reduzida_lambdify(A, B):
+    x = sp.symbols('x')
+    return sp.lambdify(x, equacao_reduzida(A, B), 'numpy')
+
 def equacao_reduzida(A, B):
     x = sp.symbols('x')
     return coeficiente_angular(A, B) * x + coeficiente_linear(A, B)
