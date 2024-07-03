@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-from geometria_analitica.utils import distancia_euclidiana
+from utils import distancia_euclidiana
 
 # Coordenadas 
 A = (3,8)

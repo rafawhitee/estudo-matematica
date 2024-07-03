@@ -1,8 +1,8 @@
 import matplotlib.pyplot as plt
-from geometria_analitica.utils import distancia_euclidiana
+from utils import distancia_euclidiana
 
 # Exemplo EEAR:
-# O triângulo de vértices A(7,3), B(-4,3) e C(-4,-2) e:
+# O triângulo de vértices A(7,3), B(-4,3) e C(-4,-2) é:
 #   a) Escaleno
 #   b) Isósceles
 #   c) Equiângulo

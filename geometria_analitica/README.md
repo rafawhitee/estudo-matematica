@@ -23,6 +23,10 @@ Baricentro de um triângulo
 
 Basta utilizar a média aritmética (nesse caso, são de 3 pontos) entre os pontos.
 
+Baricentro é o encontro das retas das medianas dos 3 pontos do triângulo
+A Mediana divide o outro lado igual em partes, exemplo: se um lado tem total de 8, ao dividir por uma mediana, fica 4 em cada lado.
+E dividindo todos os lados com mediana, o encontro no centro desse triângulo é o baricentro
+
 ## Aula 004
 Alinhamento de 3 Pontos.
 
