@@ -28,7 +28,9 @@ T_prime_vals = derivative_func(N_vals)
 N_critical = np.sqrt(A / B)
 T_critical = expression_func(N_critical)
 
-plano_cartesiano = PlanoCartesiano(limite_eixo_x=[1, 20], titulo_eixo_y=[-10, max(T_vals) + 50])
+# monta o plano cartesiano para renderizar
+plano_cartesiano = PlanoCartesiano(limite_eixo_x=[1, 20], limite_eixo_y=[-10, max(T_vals) + 50])
 plano_cartesiano.inserir_pontos(valores_x=N_vals, valores_y=T_vals, titulo='Tempo de Resposta T(N)')
+plano_cartesiano.inserir_ponto(coordenada=(N_critical, T_critical))
 plano_cartesiano.inserir_anotacao(coordenada=(N_critical, T_critical), titulo=f'Número Ótimo de Servidores: {N_critical:.2f}', coordenada_titulo=(N_critical, T_critical + 10))
 plano_cartesiano.renderizar()
