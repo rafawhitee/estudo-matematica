@@ -2,10 +2,57 @@ import sympy as sp
 
 # calcula a distância euclidiana entre 2 pontos
 def distancia_euclidiana(A, B):
-    x1, y1 = sp.symbols('x1 y1')
-    x2, y2 = sp.symbols('x2 y2')
+    x1, y1, x2, y2 = sp.symbols('x1 y1 x2 y2')
     expression = sp.sqrt((x2 - x1)**2 + (y2 - y1)**2)
     return expression.subs({x1: A[0], y1: B[0], x2: A[1], y2: B[1]}).evalf()
+
+# calcula a distância do ponto para a reta
+# OBS: a expressão da reta deve estar na forma geral --> Ax + By + C
+def distancia_reta_ponto(reta_forma_geral, P):
+    x, y = sp.symbols('x y')
+    A = reta_forma_geral.coeff(x)
+    B = reta_forma_geral.coeff(y)
+    C = reta_forma_geral - A*x - B*y # C é o termo constante, então subtraímos as partes de x e y da expressão original
+    return sp.Abs(((A * P[0]) + (B * P[1])  + C) / sp.sqrt(A**2 + B**2))
+
+# retorna o menor ângulo (agudo) entre as 2 retas
+def angulo_agudo(reta_forma_reduzida_1, reta_forma_reduzida_2):
+    x = sp.symbols('x')
+    coeficiente_angular_reta_1 = reta_forma_reduzida_1.coeff(x)
+    coeficiente_angular_reta_2 = reta_forma_reduzida_2.coeff(x)
+    if coeficiente_angular_reta_1 == 0:
+        return sp.Abs(1 / coeficiente_angular_reta_2)
+    if coeficiente_angular_reta_2 == 0:
+        return sp.Abs(1 / coeficiente_angular_reta_1)
+    return sp.Abs( (coeficiente_angular_reta_1 - coeficiente_angular_reta_2) / (1 + (coeficiente_angular_reta_1 * coeficiente_angular_reta_2) ))
+
+# retorna o valor do coeficiente angular para a reta ser perpendicular
+def coeficiente_angular_para_ser_perpendicular(reta_forma_reduzida):
+    x = sp.symbols('x')
+    return -(1/reta_forma_reduzida.coeff(x))
+
+# retorna true ou false se as 2 retas são paralelas paralelas (formam um ângulo de 90 graus)
+# OBS: a expressão da reta deve estar na forma reduzida --> y = Ax + B
+def perpendiculares(reta_forma_reduzida_1, reta_forma_reduzida_2):
+    x = sp.symbols('x')
+    return reta_forma_reduzida_1.coeff(x) * reta_forma_reduzida_2.coeff(x) == -1
+
+# retorna true ou false se as 2 retas são paralelas coincidentes (coeficiente angular e linear são iguais)
+# OBS: a expressão da reta deve estar na forma reduzida --> y = Ax + B
+def coincidentes(reta_forma_reduzida_1, reta_forma_reduzida_2):
+    if paralelas(reta_forma_reduzida_1, reta_forma_reduzida_2):
+        x = sp.symbols('x')
+        # coeficiente linear é o termo constante, então subtraímos as partes de x da expressão original
+        coeficiente_linear_reta_1 = reta_forma_reduzida_1 - reta_forma_reduzida_1.coeff(x)*x 
+        coeficiente_linear_reta_2 = reta_forma_reduzida_2 - reta_forma_reduzida_2.coeff(x)*x 
+        return coeficiente_linear_reta_1 == coeficiente_linear_reta_2
+    return False
+
+# retorna true ou false se as 2 retas são paralelas
+# OBS: a expressão da reta deve estar na forma reduzida --> y = Ax + B
+def paralelas(reta_forma_reduzida_1, reta_forma_reduzida_2):
+    x = sp.symbols('x')
+    return reta_forma_reduzida_1.coeff(x) == reta_forma_reduzida_2.coeff(x)
 
 # retorna a coordenada do ponto médio entre os 2 pontos
 def ponto_medio(A, B):

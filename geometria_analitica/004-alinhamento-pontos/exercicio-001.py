@@ -10,6 +10,8 @@ A = (c,3)
 B = (2,c)
 C = (14,-3)
 
+print(f"Resolvendo via Coeficiente Angular")
+
 # calcula o coeficiente angular entre A e C (como tem um símbolo, ele retornará uma equação)
 coeficiente_angular_ac = coeficiente_angular(A, C)
 print(f"Coeficiente AC: {coeficiente_angular_ac}")
@@ -26,6 +28,19 @@ print(f"Equação --> {equation}")
 solutions = sp.solve(equation)
 
 print(f"Solução --> {solutions} \n")
+
+# resolvendo via matriz
+print(f"Resolvendo via Determinante")
+matriz = sp.Matrix([[A[0], A[1], 1],
+                   [B[0], B[1], 1],
+                   [C[0], C[1], 1]])
+
+# Calculando o determinante
+determinante = matriz.det()
+solutions_via_matrix = sp.solve(determinante)
+print(f"Determinante da Matriz com os 3 pontos--> {determinante}")
+print(f"Solução do Determinante (pois o determinante, retornou uma função) --> {sp.solve(determinante)}")
+print(f"Soluções foram iguais --> {solutions == solutions_via_matrix} \n")
 
 for solution in solutions:
     # Provas reais:
