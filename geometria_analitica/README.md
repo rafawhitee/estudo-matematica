@@ -128,3 +128,15 @@ A fórmula é bem parecida com a distância entre dois pontos.
 ```
 R é o raio
 ```
+
+## Aula 014 (Posição Relativa entre Ponto e a Circunferência)
+
+Distância maior que raio --> Ponto está fora da circunferência (Externo)
+Distância igual ao raio --> Ponto está em cima da linha da circunferência (Pertencente)
+Distância menor ao raio --> Ponto está dentro da circunferência
+
+Também é possível jogar as coordenadas dos pontos na equação reduzida da circunferência e resolver a equação
+
+Resultado Maior que 0 --> Ponto está fora da circunferência (Externo)
+Resultado Igual a 0  --> Ponto está em cima da linha da circunferência (Pertencente)
+Resultado Menor que 0  --> Ponto está dentro da circunferência
