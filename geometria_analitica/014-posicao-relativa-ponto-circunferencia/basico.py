@@ -3,14 +3,12 @@ import sympy as sp
 from utils import *
 from plano_cartesiano.utils import PlanoCartesiano
 
-# Ponto (3,2)
+# Ponto Qualquer (3,2)
 P = (3,2)
 
 # Equação da Circunferência --> (x-2)² + (y+1)² = 9
-x, y = sp.symbols("x y")
-equacao_circunferencia = sp.Eq(9, (x - 2)**2 + (y + 1)**2)
+C = (2, -1) # Coordenadas do Centro da Circunferência, 2 é o x0 e y0 é -1
 raio = 3 # Raio é 3 (pois na equação está = 9)
-C = (2, -1) # 2 é o x0 e y0 é -1
 
 distancia_ponto_centro_circunferencia = distancia_euclidiana(P, C)
 if distancia_ponto_centro_circunferencia > raio:
@@ -31,7 +29,7 @@ plano_cartesiano = PlanoCartesiano()
 # Insere os pontos da circunferência
 plano_cartesiano.inserir_pontos(valores_eixo_x=x, valores_eixo_y=y)
 
-# Coloca os Pontos 
+# Coloca os Pontos e suas Anotações
 plano_cartesiano.inserir_ponto(P, cor='red', tamanho=100)
 plano_cartesiano.inserir_anotacao(coordenada=P, titulo="Ponto Qualquer")
 
