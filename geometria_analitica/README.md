@@ -102,3 +102,10 @@ Você conhecendo a coordenada dos 3 vértices do triângulo, basta jogar a coord
 ```
 Área = (|Determinante|) / 2
 ```
+
+## Aula 012 (Área do Quadrilátero)
+O jeito mais simples é você traçar uma linha na diagonal do quadrilátero e ele será dividido em 2 partes, sendo 2 triângulos, então basta somar o determinante dos 2 triângulos e dividr por 2.
+
+```
+Área = (|Determinante do Primeiro Triângulo| + |Determinante do Segundo Triângulo|) / 2
+```
