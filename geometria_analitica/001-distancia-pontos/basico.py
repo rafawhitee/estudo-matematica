@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from utils import *
+from plano_cartesiano.utils import PlanoCartesiano
 
 # Coordenadas 
 A = (3,8)
@@ -32,20 +33,13 @@ print(f"Distância CD: {distancia_cd}\n")
 x_vals = np.linspace(0, 10, 400)
 
 # Criar a figura e os eixos
-fig, ax = plt.subplots()
+plano_cartesiano = PlanoCartesiano()
 
 # Coloca os Pontos 
-ax.scatter(A[0], A[1], color='red', s=100) 
-ax.annotate(f'A', xy=(A[0], A[1]), xytext=(A[0] - 20, A[1]), textcoords='offset points', arrowprops=dict(facecolor='red', arrowstyle='->'), ha='center')
-
-ax.scatter(B[0], B[1], color='green', s=100) 
-ax.annotate(f'B', xy=(B[0], B[1]), xytext=(B[0] + 20, B[1]), textcoords='offset points', arrowprops=dict(facecolor='green', arrowstyle='->'), ha='center')
-
-ax.scatter(C[0], C[1], color='blue', s=100) 
-ax.annotate(f'C', xy=(C[0], C[1]), xytext=(C[0] - 20, C[1]), textcoords='offset points', arrowprops=dict(facecolor='blue', arrowstyle='->'), ha='center')
-
-ax.scatter(D[0], D[1], color='yellow', s=100) 
-ax.annotate(f'D', xy=(D[0], D[1]), xytext=(D[0] - 20, D[1]), textcoords='offset points', arrowprops=dict(facecolor='yellow', arrowstyle='->'), ha='center')
+plano_cartesiano.inserir_ponto(A, cor='red', tamanho=100)
+plano_cartesiano.inserir_ponto(B, cor='green', tamanho=100)
+plano_cartesiano.inserir_ponto(C, cor='blue', tamanho=100)
+plano_cartesiano.inserir_ponto(D, cor='yellow', tamanho=100)
 
 # Coloca as distâncias entre os pontos
 
@@ -53,59 +47,37 @@ ax.annotate(f'D', xy=(D[0], D[1]), xytext=(D[0] - 20, D[1]), textcoords='offset 
 x_vals_ab = np.linspace(min(A[0], B[0]), max(A[0], B[0]), 400)
 equacao_reduzida_func_ab = equacao_reduzida_lambdify(A, B)
 y_vals_ab = np.full_like(x_vals_ab, equacao_reduzida_func_ab(x_vals_ab))
-
-ax.plot(x_vals_ab, y_vals_ab, label=f"Distância AB")
-ax.set_title(distancia_ab)
+plano_cartesiano.inserir_pontos(valores_eixo_x=x_vals_ab, valores_eixo_y=y_vals_ab, label="Distância AB")
 
 # Entre A e C
 y_vals_ac = np.linspace(min(A[1], C[1]), max(A[1], C[1]), 400)
 equacao_reduzida_func_ac = equacao_reduzida_invertida_lambdify(A, C)
 x_vals_ac = np.full_like(y_vals_ac, equacao_reduzida_func_ac(y_vals_ac))
-
-ax.plot(x_vals_ac, y_vals_ac, label=f"Distância AC")
-ax.set_title(distancia_ac)
+plano_cartesiano.inserir_pontos(valores_eixo_x=np.full_like(y_vals_ac, equacao_reduzida_func_ac(y_vals_ac)), valores_eixo_y=y_vals_ac, label="Distância AC")
 
 # Entre A e D
 x_vals_ad = np.linspace(min(A[0], D[0]), max(A[0], D[0]), 400)
 equacao_reduzida_func_ad = equacao_reduzida_lambdify(A, D)
-ax.plot(x_vals_ad, equacao_reduzida_func_ad(x_vals_ad), label=f"Distância AD")
-ax.set_title(distancia_ad)
+y_vals_ad = equacao_reduzida_func_ad(x_vals_ad)
+plano_cartesiano.inserir_pontos(valores_eixo_x=x_vals_ad, valores_eixo_y=y_vals_ad, label="Distância AD")
 
 # Entre B e C
 x_vals_bc = np.linspace(min(B[0], C[0]), max(B[0], C[0]), 400)
 equacao_reduzida_func_bc = equacao_reduzida_lambdify(B, C)
-print(f"{equacao_reduzida(B, C)}")
-ax.plot(x_vals_bc, equacao_reduzida_func_bc(x_vals_bc), label=f"Distância BC")
-ax.set_title(distancia_bc)
+y_vals_bc = equacao_reduzida_func_bc(x_vals_bc)
+plano_cartesiano.inserir_pontos(valores_eixo_x=x_vals_bc, valores_eixo_y=y_vals_bc, label="Distância AD")
 
 # Entre B e D
 x_vals_bd = np.linspace(min(B[0], D[0]), max(B[0], D[0]), 400)
 equacao_reduzida_func_bd = equacao_reduzida_lambdify(B, D)
-ax.plot(x_vals_bd, equacao_reduzida_func_bd(x_vals_bd), label=f"Distância BD")
-ax.set_title(distancia_bd)
+y_vals_bd = equacao_reduzida_func_bd(x_vals_bd)
+plano_cartesiano.inserir_pontos(valores_eixo_x=x_vals_bd, valores_eixo_y=y_vals_bd, label="Distância BD")
 
 # Entre C e D
 x_vals_cd = np.linspace(min(C[0], D[0]), max(C[0], D[0]), 400)
 equacao_reduzida_func_cd = equacao_reduzida_lambdify(C, D)
-ax.plot(x_vals_cd, equacao_reduzida_func_cd(x_vals_cd), label=f"Distância CD")
-ax.set_title(distancia_cd)
+y_vals_cd = equacao_reduzida_func_cd(x_vals_cd)
+plano_cartesiano.inserir_pontos(valores_eixo_x=x_vals_cd, valores_eixo_y=y_vals_cd, label="Distância CD")
 
-# Configurar o plano cartesiano
-ax.legend()
-ax.grid(True)
-
-ax.axhline(y=0, color='k')  # Eixo x
-ax.axvline(x=0, color='k')  # Eixo y
-ax.grid(True, which='both')
-
-# Adicionar título e legendas
-plt.title('Distância entre os Pontos')
-plt.xlabel('x')
-plt.ylabel('y')
-plt.grid(True)
-
-# Definir os limites dos eixos
-ax.set_xlim([-10, 25])
-ax.set_ylim([-10, 25])
-
-plt.show()
+plano_cartesiano.alterar_limites_eixos([-10, 25], [-10, 25])
+plano_cartesiano.renderizar()

@@ -1,6 +1,6 @@
 # Geometria Analítica 
 
-## Aula 001
+## Aula 001 (Distância entre Pontos)
 Distância entre Pontos
 
 Se ambos coordenadas forem iguais, a distância é 0.
@@ -13,13 +13,13 @@ Ex 2: A(4,6) e B(8,6) o Y é igual, então basta fazer a diferença do X, sendo 
 Se não for nenhum dos casos, basta projetar a reta paralela no eixo e calcular por pitágoras.
 Ex: A(5,3) e B (7,4), como X e Y são diferentes ao mesmo tempo, tem que fazer por pitágoras.
 
-## Aula 002
+## Aula 002 (Ponto Médio)
 Ponto Médio entre 2 pontos do mesmo eixo (Eixo X e/ou Y)
 
 Basta utilizar a média aritmética entre os pontos do mesmo eixo.
 
-## Aula 003
-Baricentro de um triângulo
+## Aula 003 (Baricentro ou Centro de Gravidade)
+Baricentro de um triângulo, também conhecido como centro de gravidade, é o ponto central do triângulo.
 
 Basta utilizar a média aritmética (nesse caso, são de 3 pontos) entre os pontos.
 
@@ -27,7 +27,7 @@ Baricentro é o encontro das retas das medianas dos 3 pontos do triângulo
 A Mediana divide o outro lado igual em partes, exemplo: se um lado tem total de 8, ao dividir por uma mediana, fica 4 em cada lado.
 E dividindo todos os lados com mediana, o encontro no centro desse triângulo é o baricentro
 
-## Aula 004
+## Aula 004 (Alinhamento entre Pontos)
 Alinhamento de 3 Pontos.
 
 Basta ver a inclinação da reta (coeficiente angular) se são iguais
@@ -39,37 +39,66 @@ Outro jeito de ver se os pontos estão alinhados, é com matriz
 Basta colocar ela numa matriz, completar a última coluna com 1 e calcular o determinante desta matriz
 Se o determinado for igual a 0, estão alinhados.
 
-## Aula 005
+## Aula 005 (Equação Reduzida da Reta)
 Equação Reduzida de uma Reta (Função do Primeiro Grau)
 
 Como já consta no título, a equação reduzida da reta é uma função afim (do primeiro grau)
 
 E o coeficiente angular (declividade da reta) é igual a tangente do ângulo.
 
+```
 Tangente = Cateto Oposto / Cateto Adjacente
+```
 
-## Aula 006
+## Aula 006 (Equação Geral da Reta)
 A Equação Geral de uma reta é a Equação Fundamental só que simplificada.
 
 ### Equação Fundamental
+```
 y - ya = m (x - xa)
+```
 
 ### Equação Geral
+```
 ax + by + c = 0
+```
 
-
-## Observações:
-
-### Paralelismo
+## Aula 007 (Paralelismo)
 As retas serão paralelas se possuírem a mesma declividade (mesmo coeficiente angular) e se elas tiverem o mesmo coeficiente linear, é a mesma reta.
 Exemplo: 2x + 5 e 2x + 8 são parelelas, mas são retas diferentes (por causa do coeficiente linear)
 Exemplo 2: 4x + 5 e 4x + 5 são parelelas, e é a mesma reta (por causa do coeficiente linear)
 
-### Perpendicularismo
+## Aula 008 (Perpendicularismo)
 As retas serão perpendiculares se o coeficiente angular foi o oposto da outra com sinal trocado.
 
-Exemplo: 2x + 5 e -1/2x + 8 são perpendiculares, pois o coeficiente angular da primeira é 2 e da segunda reta é -1/2
+### Primeira Reta 
+```
+2x + 5 
+```
+### Segunda Reta
+```
+1/2x + 8 
+```
 
-Exemplo 2: -5x + 12 e 1/5x - 3 são perpendiculares, pois o coeficiente angular da primeira é -5 e o da segunda reta é 1/5
+A primeira e a segunda reta são perpendiculares, pois o coeficiente angular da primeira é 2 e da segunda reta é -1/2
 
-Fórmulas: m1 = -1/m2 ou m1 * m2 = -1
+### Fórmulas 1
+```
+m1 = -1/m2
+```
+
+### Fórmula 2 (manipulando a equação da fórmula 1)
+```
+m1 * m2 = -1
+```
+
+## Aula 009 (Ângulo entre 2 Retas)
+
+## Aula 010 (Distância da Reta para o Ponto)
+
+## Aula 011 (Área do Triângulo)
+Você conhecendo a coordenada dos 3 vértices do triângulo, basta jogar a coordenada na matriz 3x3 e calcular o determinante, fazer o módulo do determinante e dividir por 2, será a área do triângulo.
+
+```
+Área = (|Determinante|) / 2
+```

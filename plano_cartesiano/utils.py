@@ -34,11 +34,11 @@ class PlanoCartesiano:
         if legenda:
             current_ax.legend()
 
-    def inserir_ponto(self, coordenada, tipo = "ro", index = None):
+    def inserir_ponto(self, coordenada = (), cor = "red", tamanho = 50, index = None):
         current_ax = self.get_ax(index)
-        current_ax.plot(coordenada[0], coordenada[1], tipo)
+        current_ax.scatter(coordenada[0], coordenada[1], color=cor, s=tamanho)
         
-    def inserir_anotacao(self, titulo, coordenada, coordenada_titulo = None, cor = "black", tipo = "->", centralizacao = "center", index = None):
+    def inserir_anotacao(self, titulo = None, coordenada = (), coordenada_titulo = None, cor = "black", tipo = "->", centralizacao = "center", index = None):
         current_ax = self.get_ax(index)
         if coordenada_titulo == None:
             coordenada_titulo = (coordenada[0], coordenada[1] + 15)
