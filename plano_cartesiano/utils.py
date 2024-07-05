@@ -2,75 +2,57 @@ import matplotlib.pyplot as plt
 
 class PlanoCartesiano:
      
-    def __init__(self, titulo = "Plano Cartesiano", titulo_eixo_x = "X", titulo_eixo_y = "Y", limite_eixo_x = [-10, 10], limite_eixo_y = [-10, 10]):
-        fig, ax = plt.subplots()
-        self.fig = fig
-        self.ax = ax
-        self.set_titulo(titulo)
-        self.set_titulo_eixo_x(titulo_eixo_x)
-        self.set_titulo_eixo_y(titulo_eixo_y)
-        self.set_limite_eixo_x(limite_eixo_x)
-        self.set_limite_eixo_y(limite_eixo_y)
-        self.__configurar_eixos()
+    def __init__(self, linhas = 1, colunas = 1, figsize = None):
+        self._fig, self._ax = plt.subplots(nrows=linhas, ncols=colunas, figsize=figsize)
+        self._linhas = linhas
+        self._colunas = colunas
+        self._figsize = figsize
+        self._configurar_eixos()
 
-    def __configurar_eixos(self):
-        self.ax.axhline(y=0, color='k')
-        self.ax.axvline(x=0, color='k')
-        self.ax.grid(True, which='both')
+    def _configurar_eixos(self):
+        index = 0
+        while index < self._linhas:
+            current_ax = self.get_ax(index)
+            current_ax.axhline(y=0, color='k')
+            current_ax.axvline(x=0, color='k')
+            current_ax.grid(True, which='both')
+            index += 1
 
-    def inserir_pontos(self, valores_x, valores_y, titulo = None):
-        self.ax.plot(valores_x, valores_y, label=titulo)
+    def alterar_limites_eixos(self, limite_eixo_x = [-10, 10], limite_eixo_y = [-10, 10], index = None):
+        current_ax = self.get_ax(index)
+        current_ax.set_xlim(limite_eixo_x)
+        current_ax.set_ylim(limite_eixo_y)
 
-    def inserir_ponto(self, coordenada, tipo = "ro"):
-        self.ax.plot(coordenada[0], coordenada[1], tipo)
+    def inserir_pontos(self, titulo = "Plano Cartesiano", valores_eixo_x = [], valores_eixo_y = [], label = None, label_eixo_x = "X", label_eixo_y = "Y", 
+                       grid = True, legenda = True, cor = "black", index = None):
+        current_ax = self.get_ax(index)
+        current_ax.plot(valores_eixo_x, valores_eixo_y, label=label, color=cor)
+        current_ax.set_title(titulo)
+        current_ax.set_xlabel(label_eixo_x)
+        current_ax.set_ylabel(label_eixo_y)
+        current_ax.grid(grid)
+        if legenda:
+            current_ax.legend()
+
+    def inserir_ponto(self, coordenada, tipo = "ro", index = None):
+        current_ax = self.get_ax(index)
+        current_ax.plot(coordenada[0], coordenada[1], tipo)
         
-    def inserir_anotacao(self, titulo, coordenada, coordenada_titulo = None, cor = "black", tipo = "->", centralizacao = "center"):
+    def inserir_anotacao(self, titulo, coordenada, coordenada_titulo = None, cor = "black", tipo = "->", centralizacao = "center", index = None):
+        current_ax = self.get_ax(index)
         if coordenada_titulo == None:
-            coordenada_titulo = (coordenada[0], coordenada[1] + 5)
-        self.ax.annotate(titulo, xy=(coordenada[0], coordenada[1]), xytext=(coordenada_titulo[0], coordenada_titulo[1]),
+            coordenada_titulo = (coordenada[0], coordenada[1] + 15)
+        current_ax.annotate(titulo, xy=(coordenada[0], coordenada[1]), xytext=(coordenada_titulo[0], coordenada_titulo[1]),
             textcoords='offset points', arrowprops=dict(facecolor=cor, arrowstyle=tipo), ha=centralizacao)
         
-    def renderizar(self):
-        plt.title(self.titulo)
-        plt.xlabel(self.titulo_eixo_x)
-        plt.ylabel(self.titulo_eixo_y)
-        plt.legend()
-        plt.grid(True)
+    def renderizar(self, tight = False):
+        if tight:
+            plt.tight_layout()
         plt.show()
-
-
+    
     ## Getters and Setters
-    def get_titulo(self):
-        return self.titulo
+    def get_fig(self):
+        return self._fig
     
-    def set_titulo(self, titulo):
-        self.titulo = titulo
-        plt.title(self.titulo)
-
-    def get_titulo_eixo_x(self):
-        return self.titulo_eixo_x
-    
-    def set_titulo_eixo_x(self, titulo_eixo_x):
-        self.titulo_eixo_x = titulo_eixo_x
-        plt.xlabel(self.titulo_eixo_x)
-
-    def get_titulo_eixo_y(self):
-        return self.titulo_eixo_y
-    
-    def set_titulo_eixo_y(self, titulo_eixo_y):
-        self.titulo_eixo_y = titulo_eixo_y
-        plt.ylabel(self.titulo_eixo_y)
-
-    def get_limite_eixo_x(self):
-        return self.limite_eixo_x
-    
-    def set_limite_eixo_x(self, limite_eixo_x):
-        self.limite_eixo_x = limite_eixo_x
-        self.ax.set_xlim(limite_eixo_x)
-
-    def get_limite_eixo_y(self):
-        return self.limite_eixo_y
-    
-    def set_limite_eixo_y(self, limite_eixo_y):
-        self.limite_eixo_y = limite_eixo_y
-        self.ax.set_ylim(limite_eixo_y)
+    def get_ax(self, index = None):
+        return self._ax if index == None or self._linhas == 1 else self._ax[index]
