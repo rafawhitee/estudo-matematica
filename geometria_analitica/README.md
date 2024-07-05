@@ -109,3 +109,22 @@ O jeito mais simples é você traçar uma linha na diagonal do quadrilátero e e
 ```
 Área = (|Determinante do Primeiro Triângulo| + |Determinante do Segundo Triângulo|) / 2
 ```
+
+## Aula 013 (Equação Reduzida da Circunferência)
+A fórmula é bem parecida com a distância entre dois pontos.
+
+```
+(x - x0)² + (y - y0)² = R²
+```
+
+```
+(x,y) é a coordenada de um ponto qualquer
+```
+
+```
+(x0,y0) é a coordenada do centro da circunferência
+```
+
+```
+R é o raio
+```
