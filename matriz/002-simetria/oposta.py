@@ -1,9 +1,9 @@
 import sympy as sp
 
-matriz = sp.Matrix([[5, 2],
+A = sp.Matrix([[5, 2],
                     [-7, 9]])
-matriz_oposta = -matriz
+A_oposta = -A
 
-print(f"Matriz original: {matriz}")
-print(f"Matriz oposta: {matriz_oposta}")
+print(f"Matriz original: {A}")
+print(f"Matriz oposta: {A_oposta}")
 

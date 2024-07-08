@@ -1,16 +1,16 @@
 import sympy as sp
 
-matriz = sp.Matrix([[0, 3],
+A = sp.Matrix([[0, 3],
                     [-3, 0]])
-matriz_oposta = -matriz
-matriz_transposta = matriz.transpose()
+A_oposta = -A
+A_transposta = A.transpose()
 
-print(f"Matriz 1 é antissimétrica: {matriz_oposta == matriz_transposta}")
+print(f"A é antissimétrica: {A_oposta == A_transposta}")
 
-matriz_2 = sp.Matrix([[7, 9, 1],
+B = sp.Matrix([[7, 9, 1],
                     [6, 3, 4],
                     [3, 3, 8]])
-matriz_2_oposta = -matriz_2
-matriz_2_transposta = matriz_2.transpose()
+B_oposta = -B
+B_transposta = B.transpose()
 
-print(f"Matriz 2 é antissimétrica: {matriz_2_oposta == matriz_2_transposta}")
+print(f"B é antissimétrica: {B_oposta == B_transposta}")

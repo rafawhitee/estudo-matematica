@@ -1,15 +1,15 @@
 import sympy as sp
 
-matriz = sp.Matrix([[3, 1, 2],
+A = sp.Matrix([[3, 1, 2],
                     [1, 4, 3],
                     [2, 3, 5]])
-matriz_transposta = matriz.transpose()
+A_transposta = A.transpose()
 
-print(f"Matriz 1 é simétrica: {matriz == matriz_transposta}")
+print(f"A é simétrica: {A == A_transposta}")
 
-matriz_2 = sp.Matrix([[7, 9, 1],
+B = sp.Matrix([[7, 9, 1],
                     [6, 3, 4],
                     [3, 3, 8]])
-matriz_2_transposta = matriz_2.transpose()
+B_transposta = B.transpose()
 
-print(f"Matriz 2 é simétrica: {matriz_2 == matriz_2_transposta}")
+print(f"B é simétrica: {B == B_transposta}")
