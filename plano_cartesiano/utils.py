@@ -34,7 +34,7 @@ class PlanoCartesiano:
         if legenda:
             current_ax.legend()
 
-    def inserir_ponto(self, coordenada = (), cor = "red", tamanho = 70, index = None):
+    def inserir_ponto(self, coordenada = (), cor = "black", tamanho = 70, index = None):
         current_ax = self.get_ax(index)
         current_ax.scatter(coordenada[0], coordenada[1], color=cor, s=tamanho)
         
