@@ -1,5 +1,4 @@
 import numpy as np
-import sympy as sp
 from utils import *
 from plano_cartesiano.utils import PlanoCartesiano
 

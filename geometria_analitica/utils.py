@@ -31,7 +31,7 @@ def coeficiente_angular_para_ser_perpendicular(reta_forma_reduzida):
     x = sp.symbols('x')
     return -(1/reta_forma_reduzida.coeff(x))
 
-# retorna true ou false se as 2 retas são paralelas paralelas (formam um ângulo de 90 graus)
+# retorna true ou false se as 2 retas são perpendiculares (formam um ângulo de 90 graus)
 # OBS: a expressão da reta deve estar na forma reduzida --> y = Ax + B
 def perpendiculares(reta_forma_reduzida_1, reta_forma_reduzida_2):
     x = sp.symbols('x')
