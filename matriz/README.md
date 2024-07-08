@@ -81,6 +81,5 @@ Subtrair o resultado da diagonal principal com a da secundária.
 ### Determinantes de Matrizes com Ordem 3
 Utilizar a Regra de Sarrus
 
-
 ### Determinantes de Matrizes com Ordem 4
 Utilizar a Regra de La Place
