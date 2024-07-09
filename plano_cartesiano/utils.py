@@ -7,14 +7,14 @@ class PlanoCartesiano:
         self._linhas = linhas
         self._colunas = colunas
         self._figsize = figsize
-        self._configurar_eixos()
+        self.configurar_eixos()
 
-    def _configurar_eixos(self):
+    def configurar_eixos(self, x_inicial = 0, y_inicial = 0):
         index = 0
         while index < self._linhas:
             current_ax = self.get_ax(index)
-            current_ax.axhline(y=0, color='k')
-            current_ax.axvline(x=0, color='k')
+            current_ax.axhline(y=y_inicial, color='k')
+            current_ax.axvline(x=x_inicial, color='k')
             current_ax.grid(True, which='both')
             index += 1
 
@@ -24,7 +24,7 @@ class PlanoCartesiano:
         current_ax.set_ylim(limite_eixo_y)
 
     def inserir_pontos(self, titulo = "Plano Cartesiano", valores_eixo_x = [], valores_eixo_y = [], label = None, label_eixo_x = "X", label_eixo_y = "Y", 
-                       grid = True, legenda = True, cor = "black", index = None):
+                       grid = True, legenda = True, cor = None, index = None):
         current_ax = self.get_ax(index)
         current_ax.plot(valores_eixo_x, valores_eixo_y, label=label, color=cor)
         current_ax.set_title(titulo)

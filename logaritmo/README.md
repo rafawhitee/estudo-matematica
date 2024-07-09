@@ -13,3 +13,8 @@ Mas no caso abaixo, o 10 não pode ser escrito na base 3, então aplica-se logar
 ```
 10 = 3^x
 ```
+
+Se transforma em
+```
+log x na base 3 = 10
+```
