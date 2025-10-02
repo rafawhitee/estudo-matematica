@@ -59,5 +59,5 @@ for alpha in np.linspace(0, 1, steps):
     plt.close(fig)
 
 # Salva o gif
-imageio.mimsave('projecao_ortogonal.gif', frames, duration=0.08)
-print("GIF salvo como 'projecao_ortogonal.gif'")
+imageio.mimsave('/algebra_linear/projecao_ortogonal.gif', frames, duration=0.08)
+print("GIF salvo como '/algebra_linear/projecao_ortogonal.gif'")
