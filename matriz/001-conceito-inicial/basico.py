@@ -1,5 +1,8 @@
 import sympy as sp
 
+# Podemos entender uma matriz como uma forma de representar um conjunto de valores em um formato parecido com uma tabela. Uma matriz A 
+# é uma matriz que tem linhas e colunas.
+ 
 # possui somente 1 linha e 1 coluna
 matriz_unitaria = sp.Matrix([[1]])
 print(f"Matriz Unitária: {matriz_unitaria}")
