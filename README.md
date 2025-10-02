@@ -1,14 +1,9 @@
 # Estudo Matemática
 
-## 🚀 Começando
+## Matemática Elementar para Computação
 
-Criei esse projeto para estudo, cada assunto está separado em uma pasta, em algumas (provavelmente todas ou quase todas) existe/existirá um utils.py, 
-com funções para utilizar em outros arquivos python.
+- Descrições e Notebooks
+https://matematica.pgdinamica.com/
 
-Para o Python conseguir enxergar esses arquivos, deve registrar eles no path do python no seu sistema operacional.
-
-Exemplos
-### Windows
-```
-set PYTHONPATH=%PYTHONPATH%;E:\Dev\Projetos\Python\estudo_matematica\plano_cartesiano
-```
+- Videos Aulas
+https://www.youtube.com/watch?v=nIN5_nHGk4w&list=PL5TJqBvpXQv7BlKLVpzrzag2VtlQ2gjV2
