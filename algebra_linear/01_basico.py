@@ -2,6 +2,8 @@ import numpy as np
 
 # O que é um vetor?
 # Vetor é uma sequência ordenada de números que pode representar posição, velocidade, força, etc.
+# Um exemplo é o rgb, rgb é um vetor de 3 dimensões que representa a cor de um pixel, R de Red, G de Green e B de Blue
+# Vetores podem ser representados como listas ou arrays em Python
 
 #####
 ##### CRIANDO VETORES
@@ -22,8 +24,7 @@ print("\n Igualdade de vetores:")
 print("\t v1 é igual a v2?", np.array_equal(v1, v2))  # True
 print("\t v1 é igual a v3?", np.array_equal(v1, v3))  # False
 
-# Norma do vetor --> distância da origem até o ponto representado pelo vetor
-# Também chamado de módulo do vetor
+# Norma do vetor --> distância da origem até o ponto representado pelo vetor (comprimento do vetor)
 modulo_v1 = np.linalg.norm(v1)
 print("\n Módulo (norma) de v1:", modulo_v1)
 
